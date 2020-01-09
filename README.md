@@ -43,7 +43,7 @@ npx create-react-app myapp
 2. `eject`를 통해 Webpack 설정을 외부로 꺼내기
 
 ```sh
-npm eject
+npm run eject
 
 # 또는 yarn
 yarn eject
