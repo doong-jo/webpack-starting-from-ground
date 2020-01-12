@@ -18,11 +18,11 @@ Webpack은 모던 자바스크립트 애플리케이션을 위해 사용되는 �
 
 #### Webpack의 핵심 원리 IIFE, Imeadiately invoked function expressions (즉시 실행 함수 표현)
 
-> IIFE는 스크립트 파일을 하나의 IIFE를 사용함으로써 큰 프로젝트에서 스코프 이슈를 해결할 수 있습니다. 따라서 IIFE를 사용함으로써 스코프 충돌에 대해 걱정할 필요 없이 안전하게 코드를 연결할 수 있습니다.
+> IIFE는 스크립트 파일을 하나의 IIFE를 사용함으로써 큰 프로젝트에서 스코프 이슈를 해결할 수 있습니다. 따라서 IIFE를 사용함으로써 스코프 충돌에 대해 걱정할 필요 없이 안전하게 코드를 번들링할 수 있습니다.
 
 Webpack은 IIFE를 사용하며 그 밖에 사용하는 도구로써는 Make, Gulp, Grund, Brocooli or Brunch가 있습니다. 이 도구들도 알려진과 같이 번들러(또는 테스크 러너)로써 프로젝트 파일들을 모두 번들링해줍니다. 하지만 다른 도구들과 다르게 Webpack은 [dependency graph](https://Webpack.js.org/concepts/dependency-graph/)를 생성하여 빌드시켜주는 도구로써 크고 복잡한 리소스가 있는 프로젝트에서는 Webpack을 사용하는 것이 좋습니다. (Grunt, Gulp는 오로지 리소스에 대한 툴로 사용되며 dependency graph 개념이 없음) 또한 비슷한 Browsify와 비교한다면 속도면에서 좀 더 우월합니다.
 
-Webpack을 사용하지 않고 번들링을 한다고 가정해본다면, 하나의 파일을 변경한다는 것은 (번들을 새로 만들어야하므로)전체를 다시 빌드한다는 것입니다. 이를 해결하기 위해 번들링(연결)을 쉽게하려면 파일들 간에 스크립트를 재사용해야합니다. 하지만 이를 최적화하여 빌드하는 것은 어렵습니다. 또한 코드를 작성한 뒤에 그 코드가 스크립트에서 실제로 사용되는지 아닌지 어떻게 알 수 있을까요?
+Webpack을 사용하지 않고 번들링을 한다고 가정해본다면, 하나의 파일을 변경한다는 것은 (번들을 새로 만들어야하므로)전체를 다시 빌드한다는 것입니다. 이를 해결하기 위해 번들링을 쉽게하려면 파일들 간에 스크립트를 재사용해야합니다. 하지만 이를 최적화하여 빌드하는 것은 어렵습니다. 또한 코드를 작성한 뒤에 그 코드가 스크립트에서 실제로 사용되는지 아닌지 어떻게 알 수 있을까요?
 
 예를 들어 lodash에서 단일함수 만 사용하더라도 lodash 전체 코드를 추가한 다음 함께 번들링해야합니다. 이러한 코드의 종속성은 어떻게 해결할까요? 코드의 로딩지연은 커지는 것을 막아야하며 이를 해결하기 위해선 개발자의 많은 수작업이 필요합니다.
 
@@ -151,7 +151,7 @@ plugins: [
 
 #### Mode
 
-webpack을 구동시킬 mode를 지정해줄 수 있습니다. `development`, `production`, `none` 세가지가 있는데 각각의 설정에 따라 webpack의 내장된 최적화를 어떤 방식으로 할지 지정할 수 있습니다. [webpack의 mode 문서](https://webpack.js.org/configuration/mode/)를 참고하여 어떤 최적화가 설정되는지 자세하게 알 수 있습니다.
+webpack을 구동시킬 mode를 지정해줄 수 있습니다. `development`, `production`, `none` 세가지가 있는데 각각의 설정에 따라 webpack의 내장된 최적화를 어떤 방식으로 할지 지정할 수 있습니다. [webpack의 mode 문서](https://webpack.js.org/configuration/mode/)를 참고하여 어떤 최적화가 설정되는지 자세하게 알 수 있습니다. 이를 바탕으로 임의로 `optimization` 속성에 최적화 옵션을 추가할 수 있습니다.
 
 ```js
 mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
