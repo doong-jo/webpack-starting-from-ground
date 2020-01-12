@@ -157,10 +157,6 @@ webpack을 구동시킬 mode를 지정해줄 수 있습니다. `development`, `p
 mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
 ```
 
-#### Browser Compatibility
-
-Webpack은 ES5를 사용하는 모든 브라우저를 지원하지만 IE8의 아래 버젼은 지원하지 않습니다.
-
 ## 직접 Bundle을 최적화하려면? webpack-bundle-analyzer
 
 번들의 구성사항을 한번에 볼 수 있는 도구입니다. 이를 활용하여 어떤 구성이 bundle의 크기를 얼마나 차지하는지 확인할 수 있고 이를 통해서 불필요한 라이브러리를 제거하거나 다른 라이브러리를 고려해볼 수 있습니니다. 리소스와 관련된 부분도 webpack 설정을 수정하여 최적화가 가능합니다.
