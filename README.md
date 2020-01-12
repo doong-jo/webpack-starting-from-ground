@@ -60,7 +60,6 @@ yarn eject
 - Loaders
 - Plugins
 - Mode
-- Browser Compatibility
 
 이 요소들을 CRA에서의 `webpack.config.js` 코드에서 모든 설정을 살펴보진 않고 핵심적인 부분만 하나씩 살펴보도록 하겠습니다. [config](https://github.com/enistudy/webpack-starting-from-ground/tree/master/config) 폴더 내의 파일에는 부분적으로 주석을 작성했습니다.
 
